@@ -1,8 +1,7 @@
 from random import randint
-import time
 
 def create_list(lista : list):
-    for aux in range(10):
+    for aux in range(100):
         lista.append(randint(0,100000))
     return lista
 
