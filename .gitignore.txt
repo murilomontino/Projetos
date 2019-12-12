@@ -245,6 +245,6 @@ dmypy.json
 .history
 
 ### VisualStudioCode ###
-.tmp.drivedownload
+.tmp.drivedownload/
 
 # End of https://www.gitignore.io/api/c,go,c++,java,python,kotlin,visualstudiocode
