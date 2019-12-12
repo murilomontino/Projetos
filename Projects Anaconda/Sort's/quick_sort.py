@@ -1,4 +1,6 @@
 from random import randint
+import time
+import sys
 
 def create_list(lista : list):
     for aux in range(100):
@@ -27,10 +29,14 @@ def quick_sort(lista: list):
     return esq + dir_
 
 def main():
-    queijo : list = []
-    create_list(queijo)
-    queijo = quick_sort(queijo)
-    print("Ordenado: ", queijo)
+    
+    lista : list = []
+    create_list(lista)
+    
+    lista = quick_sort(lista)
+    print(lista, flush=True)
+    
+
 
 if __name__ == "__main__":
     main()

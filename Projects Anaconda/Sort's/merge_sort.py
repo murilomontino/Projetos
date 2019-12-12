@@ -42,9 +42,9 @@ def merge_sort(lista: list):
     return ord_lista
 
 def main():
-    queijo : list = create_list(100)
-    queijo = merge_sort(queijo)
-    print("Ordenado: ", queijo)
+    lista : list = create_list(100)
+    lista = merge_sort(lista)
+    print("Ordenado: ", lista)
 
 if __name__ == "__main__":
     main()
