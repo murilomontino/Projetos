@@ -244,7 +244,7 @@ dmypy.json
 # Ignore all local history of files
 .history
 
-### VisualStudioCode ###
+### Drive download###
 .tmp.drivedownload/
 
 # End of https://www.gitignore.io/api/c,go,c++,java,python,kotlin,visualstudiocode
