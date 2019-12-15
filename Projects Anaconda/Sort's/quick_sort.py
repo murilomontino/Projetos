@@ -1,6 +1,7 @@
 from random import randint
 import time
 import sys
+from threading import Thread
 
 def create_list(lista : list):
     for aux in range(100):
@@ -22,9 +23,11 @@ def quick_sort(lista: list):
         else:
             dir_.append(aux)
 
-    esq = quick_sort(esq)
+    esqTread = Thread(target=quick_sort, args=[esq])
+    dir_Tread = Thread(target=quick_sort, args=[dir_])
     
-    dir_ = quick_sort(dir_)
+    esqTread.start
+    dir_Tread.start
 
     return esq + dir_
 
