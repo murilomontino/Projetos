@@ -16,6 +16,8 @@
 *.ilk
 *.map
 *.exp
+*.json
+*.ini
 
 # Precompiled Headers
 *.gch
