@@ -6,8 +6,8 @@ arquivo_excel  = load_workbook("planilha/SOLIM2016DIAGNOSTICO.xlsx")
 planilha_leitura = arquivo_excel.active
 
 
-linha : int = 4483
-total : int = 14719
+linha : int = 22723
+total : int = 28710
 paciente : list = []
 coluna_usavel : int = 9
 

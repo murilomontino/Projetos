@@ -8,42 +8,44 @@ def create_list(tam: int):
         lista.append(randint(0,100000))
     return lista
 
-def merge_sort(lista: list):
+def paridade(tamanho: int) -> int:
+    if tamanho % 2 == 0:
+        return 0
+    else:
+        return 1
     
-    if len(lista) <= 1:
+
+def merge_sort(lista: list, inicio=0, fim=None, tam=None):
+    
+    metade = (fim + inicio) // 2
+
+    if inicio == fim - 1 or tam <= 1:
         return lista
     
-    metade  = int(len(lista)/2)
-    esq : list = lista[:metade]
-    dir_ : list = lista[metade:]
+    elementos = tam // 2
+    sobra = paridade(tam // 2)
     
-    esq = merge_sort(esq)
-    dir_ = merge_sort(dir_)
+    esquerda = merge_sort(lista, inicio=0, fim=metade, tam=elementos)
+    direita = merge_sort(lista, inicio=metade, fim=fim, tam=elementos+sobra)
+    
 
-    ord_lista : list = []
-   
-    tam_esq = 0
-    tam_dir = 0
-    maximo = len(esq) + len(dir_)
-
-    esq.append(math.inf)
-    dir_.append(math.inf)
-
-    while tam_esq + tam_dir < maximo:
-        if esq[tam_esq] < dir_[tam_dir]:
-            ord_lista.append(esq[tam_esq])
-            tam_esq += 1
+    while (inicio < fim) and (inicio+1 < fim):
+        if lista[inicio] > lista[inicio+1]:
+            aux: int = lista[inicio]
+            lista[inicio] = lista[inicio+1]
+            lista[inicio+1] = aux
+            inicio += 1
         else:
-            ord_lista.append(dir_[tam_dir])
-            tam_dir += 1
+            inicio += 1
+    
+    return lista
 
 
-
-    return ord_lista
+lista = [15933, 33015, 35654, 23235, 40759, 11722, 65520, 83096, 96673]
 
 def main():
-    lista : list = create_list(100)
-    lista = merge_sort(lista)
+    global lista
+    merge_sort(lista, fim=len(lista), tam=len(lista))
     print("Ordenado: ", lista)
 
 if __name__ == "__main__":
